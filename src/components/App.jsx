@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { lazy } from 'react';
 
-const SharedLayout = lazy(() => import('./SharedLayout/SharedLaytout'));
+const SharedLayout = lazy(() => import('./SharedLayout/SharedLayout'));
 const HomePage = lazy(() => import('pages/HomePage/HomePage'));
 const Movies = lazy(() => import('pages/Movies/Movies'));
 const ErrorMessage = lazy(() => import('./ErrorMessages/ErrorMessages'));

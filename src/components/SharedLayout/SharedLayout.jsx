@@ -3,7 +3,7 @@ import { NavLink, Outlet, useLocation } from 'react-router-dom';
 
 import { Loader } from 'components/Loader/Loader';
 
-export const SharedLayout = () => {
+const SharedLayout = () => {
   const location = useLocation();
   return (
     <div>
@@ -36,3 +36,5 @@ export const SharedLayout = () => {
     </div>
   );
 };
+
+export default SharedLayout;
