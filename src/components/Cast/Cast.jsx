@@ -1,5 +1,5 @@
-import CastItem from 'componenets/castItem/CastItem';
-import ErrorMessage from 'components/ErrorMessages/ErrorMessages';
+import { CastItem } from 'components/CastItem/CastItem';
+import { ErrorMessage } from 'components/ErrorMessages/ErrorMessages';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchCastMovie } from 'services/api';

@@ -1,11 +1,11 @@
-import { Suspense, useEffect, useRef, useState } from 'rect';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import { NavLink, Outlet, useLocation, useParams } from 'react-router-dom';
-import ErrorMessage from 'component/ErrorMessages/ErrorMessages';
+import { ErrorMessage } from 'components/ErrorMessages/ErrorMessages';
 import { fetchMoviesById } from 'services/api';
-import { Loader } from 'componenets/Loader/Loader';
+import { Loader } from 'components/Loader/Loader';
 import getPoster from 'services/getDefaultImg';
 
-export const MoviesDetailes = () => {
+export const MovieDetailes = () => {
   const { moviesId } = useParams();
   const [movie, setMovie] = useState(null);
   const [error, setError] = useState(false);

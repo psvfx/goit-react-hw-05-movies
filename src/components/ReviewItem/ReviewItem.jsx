@@ -1,4 +1,4 @@
-export const ReviewItem = ({ review: { author, content }, index }) => {
+const ReviewItem = ({ review: { author, content }, index }) => {
   return (
     <>
       <li key={index}>
@@ -10,3 +10,5 @@ export const ReviewItem = ({ review: { author, content }, index }) => {
     </>
   );
 };
+
+export default ReviewItem;

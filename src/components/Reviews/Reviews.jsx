@@ -1,4 +1,4 @@
-import ErrorMessage from 'components/ErrorMessages/ErrorMessages';
+import { ErrorMessage } from 'components/ErrorMessages/ErrorMessages';
 import ReviewItem from 'components/ReviewItem/ReviewItem';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';

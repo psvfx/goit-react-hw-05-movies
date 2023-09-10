@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { NavLink, useLocation, useSearchParams } from 'react-router-dom';
 import { fetchMoviesBySearch } from 'services/api';
-import MoviesList from 'components/MoviesList/MoviesList';
+import { MoviesList } from 'components/MoviesList/MoviesList';
 
-export const Mivies = () => {
+export const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const searchQuery = searchParams.get('query');
   const [valueSearchMovies, setValueSearchMovies] = useState([]);
