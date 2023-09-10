@@ -1,6 +1,6 @@
 import { NavLink, useLocation } from 'react-router-dom';
 
-export const MoviesList = ({ movies }) => {
+const MoviesList = ({ movies }) => {
   const location = useLocation();
   return (
     <div>
@@ -18,3 +18,5 @@ export const MoviesList = ({ movies }) => {
     </div>
   );
 };
+
+export default MoviesList;

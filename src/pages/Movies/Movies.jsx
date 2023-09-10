@@ -1,14 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { NavLink, useLocation, useSearchParams } from 'react-router-dom';
 import { fetchMoviesBySearch } from 'services/api';
-import { MoviesList } from 'components/MoviesList/MoviesList';
+import MoviesList from 'components/MoviesList/MoviesList';
 
-export const Movies = () => {
+const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const searchQuery = searchParams.get('query');
   const [valueSearchMovies, setValueSearchMovies] = useState([]);
   const location = useLocation();
-  const backLinkHRef = location.state?.from ?? '/';
+  const backLinkHref = location.state?.from ?? '/';
 
   useEffect(() => {
     if (!searchQuery) return;
@@ -16,7 +16,7 @@ export const Movies = () => {
     async function searchMovies() {
       try {
         const resp = await fetchMoviesBySearch(searchQuery);
-        setValueSearchMovies(resp.result);
+        setValueSearchMovies(resp.results);
       } catch (error) {
         console.error(error);
       }
@@ -32,20 +32,22 @@ export const Movies = () => {
 
   return (
     <>
-      <NavLink to={backLinkHRef}>Go back</NavLink>
+      <NavLink to={backLinkHref}>Go back</NavLink>
       <h2>Search movies</h2>
       <form onSubmit={handleSubmitForm}>
-        <lebel name="searchMovies">
+        <label name="searchMovies">
           <input
             name="searchMovies"
             type="text"
-            autoComplite="off"
+            autoComplete="off"
             autoFocus
             placeholder="Search movies for name..."
           />
-        </lebel>
+        </label>
       </form>
       <MoviesList movies={valueSearchMovies} />
     </>
   );
 };
+
+export default Movies;

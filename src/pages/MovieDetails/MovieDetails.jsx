@@ -1,11 +1,11 @@
 import { Suspense, useEffect, useRef, useState } from 'react';
 import { NavLink, Outlet, useLocation, useParams } from 'react-router-dom';
-import { ErrorMessage } from 'components/ErrorMessages/ErrorMessages';
+import ErrorMessage from 'components/ErrorMessages/ErrorMessages';
 import { fetchMoviesById } from 'services/api';
 import { Loader } from 'components/Loader/Loader';
 import getPoster from 'services/getDefaultImg';
 
-export const MovieDetailes = () => {
+const MoviesDetailes = () => {
   const { moviesId } = useParams();
   const [movie, setMovie] = useState(null);
   const [error, setError] = useState(false);
@@ -23,14 +23,15 @@ export const MovieDetailes = () => {
     }
     fetchMovies();
   }, [moviesId]);
-  const backLinkLocationRef = useRef(location.state?.from ?? '/');
+
+  const backLinkLocatinRef = useRef(location.state?.from ?? '/');
 
   return (
     <>
       {error && <ErrorMessage />}
       {movie && (
         <>
-          <NavLink to={backLinkLocationRef.current}>Go back</NavLink>
+          <NavLink to={backLinkLocatinRef.current}>Go back</NavLink>
           <div>
             <img
               src={getPoster(movie.poster_path)}
@@ -47,7 +48,7 @@ export const MovieDetailes = () => {
             <h3>Genres</h3>
             <ul>
               {movie.genres.map(({ name }, index) => {
-                return <li key={index}> {name}</li>;
+                return <li key={index}>{name}</li>;
               })}
             </ul>
           </div>
@@ -80,3 +81,5 @@ export const MovieDetailes = () => {
     </>
   );
 };
+
+export default MoviesDetailes;

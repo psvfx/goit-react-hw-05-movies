@@ -1,10 +1,10 @@
-import { ErrorMessage } from 'components/ErrorMessages/ErrorMessages';
+import ErrorMessage from 'components/ErrorMessages/ErrorMessages';
 import ReviewItem from 'components/ReviewItem/ReviewItem';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchReviwsMovie } from 'services/api';
 
-export const Reviews = () => {
+const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   const { moviesId } = useParams();
   const [error, setError] = useState(null);
@@ -37,3 +37,5 @@ export const Reviews = () => {
     </>
   );
 };
+
+export default Reviews;

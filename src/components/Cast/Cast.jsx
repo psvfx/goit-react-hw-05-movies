@@ -1,10 +1,10 @@
-import { CastItem } from 'components/CastItem/CastItem';
-import { ErrorMessage } from 'components/ErrorMessages/ErrorMessages';
-import { useState, useEffect } from 'react';
+import CastItem from 'components/CastItem/CastItem';
+import ErrorMessage from 'components/ErrorMessages/ErrorMessages';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchCastMovie } from 'services/api';
 
-export const Cast = () => {
+const Cast = () => {
   const [cast, setCast] = useState([]);
   const { moviesId } = useParams();
   const [error, setError] = useState(null);
@@ -37,3 +37,5 @@ export const Cast = () => {
     </>
   );
 };
+
+export default Cast;
