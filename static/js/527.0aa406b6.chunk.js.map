@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/527.0aa406b6.chunk.js","mappings":"qMAAaA,EAAe,WAC1B,OACE,0BACE,wBAAI,qDAGT,C","sources":["components/ErrorMessages/ErrorMessages.jsx"],"sourcesContent":["export const ErrorMessage = () => {\n  return (\n    <div>\n      <h3>Oops....Not found page! Please reload the page!</h3>\n    </div>\n  );\n};\n"],"names":["ErrorMessage"],"sourceRoot":""}
